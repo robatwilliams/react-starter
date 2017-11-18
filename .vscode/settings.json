@@ -1,0 +1,13 @@
+{
+    "editor.tabSize": 2,
+
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+
+    "html.suggest.angular1": false,
+    "html.suggest.ionic": false,
+
+    // Use project version instead of one shipped with VS Code
+    "typescript.tsdk": "./node_modules/typescript/lib"
+}
