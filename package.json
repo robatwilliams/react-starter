@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "serve": "http-server dist"
+    "serve": "http-server dist",
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "@types/react": "^16.0.25",
@@ -16,6 +17,7 @@
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "typescript": "^2.6.1",
-    "webpack": "^3.8.1"
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   }
 }
