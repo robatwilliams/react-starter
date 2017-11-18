@@ -1,0 +1,16 @@
+{
+  // TODO more compilerOptions
+  "compilerOptions": {
+    "jsx": "react",
+
+    // Let Webpack consume ES6 modules and transpile imports/exports, so dead code elimination works
+    "module": "es6",
+
+    "outDir": "./dist/",
+    "target": "es5"
+  },
+  "files": [
+    // Just the entry point, as recommended by awesome-typescript-loader
+    "./src/index.tsx"
+  ]
+}
