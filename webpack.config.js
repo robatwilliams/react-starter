@@ -22,8 +22,8 @@ module.exports = {
   },
 
   plugins: [
-    // Cleans before building
-    new CleanWebpackPlugin(['dist']),
+    // Cleans before building. Avoid removing the folder so it doesn't briefly disappear from editor view
+    new CleanWebpackPlugin(['dist/**/*']),
 
     // Creates index.html
     new HtmlWebpackPlugin({
