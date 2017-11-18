@@ -4,6 +4,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  // Cheaper alternative to eval-source-map, since column mappings (for inline breakpoints) are
+  // broken in Chrome 62 anyway - even for the most basic standalone tsc-only or webpack-only examples.
+  devtool: 'cheap-module-eval-source-map',
+
   entry: './src/index.tsx',
 
   module: {
