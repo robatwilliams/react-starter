@@ -23,6 +23,7 @@ module.exports = {
 
     // Creates index.html
     new HtmlWebpackPlugin({
+      favicon: './src/favicon.ico',
       title: 'React Starter'
     })
   ],
