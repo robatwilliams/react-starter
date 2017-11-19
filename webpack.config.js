@@ -21,6 +21,23 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+            options: { sourceMap: true }
+          }, {
+            loader: 'css-loader',
+            options: {
+              camelCase: 'dashesOnly',
+              localIdentName: '[name]__[local]--[hash:base64:5]',
+              modules: true,
+              sourceMap: true
+            }
+          }
+        ]
+      },
       { test: /\.tsx$/, loader: 'awesome-typescript-loader' }
     ]
   },
