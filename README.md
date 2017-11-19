@@ -21,9 +21,15 @@ Development:
   * Visual Studio Code (settings)
 
 ## Non-features
+* Analytics
 * CSS in JS
+* Localisation
 * Offline support
+* Running unit tests in browsers (rather than Node)
 * Server-side rendering
+* Stylesheet analysis (Parker)
+* Visual regression testing (e.g. BackstopJS)
+* Web App Manifest
 
 ## Principles
 1. Simplicity
