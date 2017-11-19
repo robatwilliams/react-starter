@@ -1,0 +1,2 @@
+# whitespace: the defaults + tab-in-indent
+* whitespace=blank-at-eol,blank-at-eof,space-before-tab,tab-in-indent
