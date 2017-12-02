@@ -2,7 +2,12 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const rootPath = path.resolve(__dirname, '../');
+
 module.exports = {
+  // Make the configuration independent of current working directory
+  context: rootPath,
+
   entry: './src/index.tsx',
 
   module: {
@@ -46,7 +51,7 @@ module.exports = {
 
     // Allow imports without relative path hell
     modules: [
-      path.resolve(__dirname, '../', 'src'),
+      path.resolve(rootPath, 'src'),
       'node_modules'
     ]
   }
