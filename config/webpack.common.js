@@ -1,3 +1,5 @@
+const path = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -40,6 +42,12 @@ module.exports = {
 
   resolve: {
     // Overrides default. js is required for Webpack plugins
-    extensions: ['.js', '.ts', '.tsx']
+    extensions: ['.js', '.ts', '.tsx'],
+
+    // Allow imports without relative path hell
+    modules: [
+      path.resolve(__dirname, '../', 'src'),
+      'node_modules'
+    ]
   }
 };
