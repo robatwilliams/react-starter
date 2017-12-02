@@ -1,10 +1,17 @@
 {
   // TODO more compilerOptions
   "compilerOptions": {
+    // Use tslib for runtime helpers (e.g. __extends), rather than repeating them in each module
+    "importHelpers": true,
+    "noEmitHelpers": true,
+
     "jsx": "react",
 
     // Let Webpack consume ES6 modules and transpile imports/exports, so dead code elimination works
     "module": "es6",
+
+    // Our ES6 modules are consumed by Webpack, not browsers, so this is ok. Needed to load tslib.
+    "moduleResolution": "node",
 
     "outDir": "./dist/",
     "sourceMap": true,
