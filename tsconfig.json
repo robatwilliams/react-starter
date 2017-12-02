@@ -1,6 +1,7 @@
 {
-  // TODO more compilerOptions
   "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+
     // Use tslib for runtime helpers (e.g. __extends), rather than repeating them in each module
     "importHelpers": true,
     "noEmitHelpers": true,
@@ -12,6 +13,9 @@
 
     // Our ES6 modules are consumed by Webpack, not browsers, so this is ok. Needed to load tslib.
     "moduleResolution": "node",
+
+    // The only one of the lint-style check that isn't supported by TSLint
+    "noImplicitReturns": true,
 
     "outDir": "./dist/",
     "sourceMap": true,
