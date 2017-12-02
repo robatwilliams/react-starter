@@ -15,6 +15,11 @@ module.exports = Object.assign({}, common, {
     path: path.resolve(rootPath, 'dist')
   }),
 
+  performance: {
+    // Prevent limit breaches going unnoticed
+    hints: 'error'
+  },
+
   plugins: common.plugins.concat([
     // Cleans before building. Avoid removing the folder so it doesn't briefly disappear from editor view
     new CleanWebpackPlugin(['dist/**/*'], { root: rootPath }),
