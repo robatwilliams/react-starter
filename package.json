@@ -5,7 +5,9 @@
   "scripts": {
     "build": "webpack --config config/webpack.prod.js",
     "serve": "http-server dist",
-    "start": "webpack-dev-server --config config/webpack.dev.js"
+    "serveo": "npm run serve -- -o",
+    "start": "webpack-dev-server --config config/webpack.dev.js",
+    "starto": "npm run start -- --open"
   },
   "dependencies": {
     "@types/react": "^16.0.25",
