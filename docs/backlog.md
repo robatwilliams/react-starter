@@ -37,9 +37,6 @@ Build:
 * Continuous integration target (build, check, & test) & server config
 * ES6 build for modern browsers
 * Long-term caching
-* Minification
-* Production source maps (not for deployment)
-* Tree-shaking
 
 Development:
 * Hot reloading

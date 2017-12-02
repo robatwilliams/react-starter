@@ -22,7 +22,7 @@ module.exports = {
           }
         ]
       },
-      { test: /\.tsx$/, loader: 'awesome-typescript-loader' }
+      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' }
     ]
   },
 
@@ -40,6 +40,6 @@ module.exports = {
 
   resolve: {
     // Overrides default. js is required for Webpack plugins
-    extensions: ['.js', '.tsx']
+    extensions: ['.js', '.ts', '.tsx']
   }
 };

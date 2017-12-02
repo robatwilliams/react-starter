@@ -13,6 +13,8 @@ Styling:
 
 Build:
 * Webpack
+* Minification
+* Tree-shaking
 * Source maps (TypeScript, styles)
 
 Development:

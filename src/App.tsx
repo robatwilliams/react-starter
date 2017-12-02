@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Navigation from './Navigation';
+import { cube } from './util';
 
 export default function App() {
   return (
@@ -23,7 +24,9 @@ function Home() {
 }
 
 function Alpha() {
-  return <div>Alpha component</div>;
+  const cubed = cube(2);
+
+  return <div>Alpha component. The cube of 2 is {cubed}</div>;
 }
 
 function NotFound({ location }) {
