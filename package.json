@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config config/webpack.prod.js",
     "serve": "http-server dist",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --config config/webpack.dev.js"
   },
   "dependencies": {
     "@types/react": "^16.0.25",
