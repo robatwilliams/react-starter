@@ -10,6 +10,12 @@ Framework & ecosystem:
 
 Code:
 * Polyfills - when needed, not targeted
+  <details>
+    https://webpack.js.org/guides/shimming/#loading-polyfills
+    https://webpack.js.org/guides/shimming/#further-optimizations
+    https://philipwalton.com/articles/loading-polyfills-only-when-needed/
+    https://hackernoon.com/10-things-i-learned-making-the-fastest-site-in-the-world-18a0e1cdf4a7#c665
+  </details>
 * TSLint
 
 Styling:
@@ -33,10 +39,19 @@ Testing:
 
 Build:
 * App/vendor code split
+  <details>
+    https://webpack.js.org/concepts/entry-points/#separate-app-and-vendor-entries
+    https://webpack.js.org/guides/build-performance/#dlls
+  </details>
 * Compression
 * Continuous integration target (build, check, & test) & server config
 * ES6 build for modern browsers
 * Long-term caching
+  <details>
+    https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31
+    https://survivejs.com/webpack/optimizing/separating-manifest/
+    https://webpack.js.org/guides/build-performance/#minimal-entry-chunk
+  </details>
 
 Development:
 * Hot reloading
@@ -61,6 +76,10 @@ Deployment:
   </details>
 * Library source maps (off by default?)
 * Per-environemnt configuration
+  <details>
+    https://webpack.js.org/plugins/define-plugin/#service-urls ?
+    https://webpack.js.org/plugins/environment-plugin/#dotenvplugin
+  </details>
 * Security-related HTTP headers
 
 Operations:
@@ -70,10 +89,16 @@ Operations:
 Other:
 * Dependency insecure/outdated watcher (David)
 * Icons (Font Awesome SVG)
+  <details>
+    https://webpack.js.org/guides/typescript/#importing-other-assets
+  </details>
 * NPM shrinkwrap
 * NPM update check helper (npm-check)
 * Unsupported browser warning
 * Version-aware application
+  <details>
+    https://webpack.js.org/plugins/define-plugin/#usage (but with version number rather than hash)
+  </details>
 
 Tooling recommendations:
 * Chrome extensions (React, Redux)
@@ -83,6 +108,9 @@ Tooling recommendations:
   * Linting
   * Snippets
 * Webpack bundle analysis
+  <details>
+    https://webpack.js.org/guides/code-splitting/#bundle-analysis
+  </details>
 
 Readme:
 * Licence

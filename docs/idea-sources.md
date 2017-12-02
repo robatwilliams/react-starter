@@ -39,9 +39,9 @@
   * ✔ Testing
   * ✔ Updates
   * ✔ index.html
-* ⚠ Webpack documentation
-  * ⚠ Concepts
-  * ⚠ Configuration
-  * ⚠ Guides
-  * ⚠ Loaders
-  * ⚠ Plugins
+* ✔ Webpack documentation
+  * ✔ Concepts
+  * ✔ Configuration
+  * ✔ Guides
+  * ✔ Loaders
+  * ✔ Plugins

@@ -24,12 +24,17 @@ Development:
 
 ## Non-features
 * Analytics
+* Build process optimisation for large codebases
+* Comprehensive TSLint rule configuration
 * CSS in JS
+* Font loading
+* Image loading & optimisation
 * Localisation
 * Offline support
 * Running unit tests in browsers (rather than Node)
 * Server-side rendering
 * Stylesheet analysis (Parker)
+* Task runner
 * Visual regression testing (e.g. BackstopJS)
 * Web App Manifest
 
