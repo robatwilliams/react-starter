@@ -15,6 +15,10 @@
 
     "outDir": "./dist/",
     "sourceMap": true,
+
+    // noImplicit{Any,This}, strict{FunctionTypes,NullChecks}, and any future strict compiler features
+    "strict": true,
+
     "target": "es5"
   },
   "files": [

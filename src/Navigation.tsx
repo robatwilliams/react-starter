@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavLink as DefaultNavLink } from 'react-router-dom';
+import { NavLink as DefaultNavLink, NavLinkProps } from 'react-router-dom';
 
 // Use require rather than import, because TypeScript doesn't understand. So usage is unchecked.
 const styles = require('./navigation.css');
@@ -15,6 +15,6 @@ export default function Navigation() {
   );
 }
 
-function NavLink(props) {
+function NavLink(props: NavLinkProps) {
   return <DefaultNavLink {...props} activeClassName={styles.isActive} />
 }
