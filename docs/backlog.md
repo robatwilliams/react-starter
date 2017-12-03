@@ -107,10 +107,6 @@ Tooling recommendations:
   * Formatting
   * Linting
   * Snippets
-* Webpack bundle analysis
-  <details>
-    https://webpack.js.org/guides/code-splitting/#bundle-analysis
-  </details>
 
 Readme:
 * Licence

@@ -1,4 +1,5 @@
 /dist
 /node_modules
 
+bundle-stats.json
 npm-debug.log*

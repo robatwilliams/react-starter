@@ -15,6 +15,7 @@ Build:
 * Webpack
 * Minification
 * Tree-shaking
+* Bundle analysis
 * Source maps (TypeScript, styles)
 
 Development:
@@ -44,3 +45,12 @@ Development:
 1. Explain the "why" when it isn't clear
 1. No obscure dependencies
 1. No unstable features/tools
+
+## Tooling
+### Webpack bundle analysis
+`webpack-bundle-analyzer` is included; see the `analyze-bundle` NPM script.
+There are also [other tools](https://webpack.js.org/guides/code-splitting/#bundle-analysis)
+that can consume the `bundle-stats.json` file that Webpack generates:
+[official analyse tool](https://webpack.github.io/analyse),
+[webpack-chart](https://alexkuz.github.io/webpack-chart),
+[webpack-visualizer](https://chrisbateman.github.io/webpack-visualizer).

@@ -29,7 +29,14 @@ module.exports = {
           }
         ]
       },
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' }
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader',
+        options: {
+          // Don't pollute Webpack stats JSON output
+          silent: process.argv.indexOf('--json') !== -1
+        }
+      }
     ]
   },
 
