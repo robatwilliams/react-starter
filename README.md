@@ -15,6 +15,7 @@ Build:
 * Webpack
 * Minification
 * Tree-shaking
+* Compression (gzip)
 * App/vendor code split
 * Long-term caching
 * Bundle analysis

@@ -2,6 +2,7 @@ const path = require('path');
 
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const UglifyJSWebpackPlugin = require('uglifyjs-webpack-plugin');
 
 const common = require('./webpack.common.js');
@@ -24,6 +25,9 @@ module.exports = Object.assign({}, common, {
   plugins: common.plugins.concat([
     // Cleans before building. Avoid removing the folder so it doesn't briefly disappear from editor view
     new CleanWebpackPlugin(['dist/**/*'], { root: rootPath }),
+
+    // Prepare gzipped files ahead of time, for server to serve
+    new CompressionWebpackPlugin(),
 
     // Put libraries (e.g. React) into production mode
     new webpack.DefinePlugin({
