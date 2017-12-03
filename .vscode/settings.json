@@ -8,6 +8,10 @@
     "html.suggest.angular1": false,
     "html.suggest.ionic": false,
 
+    "search.exclude": {
+        "./dist": true
+    },
+
     // Use project version instead of one shipped with VS Code
     "typescript.tsdk": "./node_modules/typescript/lib"
 }
