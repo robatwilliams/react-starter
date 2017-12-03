@@ -39,7 +39,6 @@ Testing:
 
 Build:
 * Continuous integration target (build, check, & test) & server config
-* ES6 build for modern browsers
 
 Development:
 * Hot reloading

@@ -16,6 +16,11 @@ Build:
 * Minification
 * Tree-shaking
 * Compression (gzip)
+* ⚠ ES6 build for modern browsers
+  * Not on `master` branch, due to an unresolved
+    [issue](https://github.com/philipwalton/webpack-esnext-boilerplate/issues/1)
+    that causes legacy browsers to download (but not run) both builds.
+    See branch `modern-browser-build`.
 * App/vendor code split
 * Long-term caching
 * Bundle analysis
