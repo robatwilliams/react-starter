@@ -38,20 +38,9 @@ Testing:
 * Workflows - debugging, watching
 
 Build:
-* App/vendor code split
-  <details>
-    https://webpack.js.org/concepts/entry-points/#separate-app-and-vendor-entries
-    https://webpack.js.org/guides/build-performance/#dlls
-  </details>
 * Compression
 * Continuous integration target (build, check, & test) & server config
 * ES6 build for modern browsers
-* Long-term caching
-  <details>
-    https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31
-    https://survivejs.com/webpack/optimizing/separating-manifest/
-    https://webpack.js.org/guides/build-performance/#minimal-entry-chunk
-  </details>
 
 Development:
 * Hot reloading

@@ -11,9 +11,10 @@ const rootPath = path.resolve(__dirname, '../');
 module.exports = Object.assign({}, common, {
   devtool: 'source-map',
 
-  output: Object.assign({}, common.output, {
+  output: {
+    filename: '[name].[chunkhash].js',
     path: path.resolve(rootPath, 'dist')
-  }),
+  },
 
   performance: {
     // Prevent limit breaches going unnoticed

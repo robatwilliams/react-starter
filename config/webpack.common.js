@@ -1,5 +1,6 @@
 const path = require('path');
 
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const rootPath = path.resolve(__dirname, '../');
@@ -40,11 +41,19 @@ module.exports = {
     ]
   },
 
-  output: {
-    filename: '[name].bundle.js'
-  },
-
   plugins: [
+    // Vendor chunk for libraries, separate from application code
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: (module, count) => module.context.includes('node_modules')
+    }),
+
+    // Webpack runtime & manifest chunk (needs to be the last CommonsChunk)
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime-manifest',
+      minChunks: Infinity // ensures no modules go in the chunk
+    }),
+
     // Creates index.html
     new HtmlWebpackPlugin({
       favicon: './src/favicon.ico',

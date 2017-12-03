@@ -12,5 +12,9 @@ module.exports = Object.assign({}, common, {
 
   // Cheaper alternative to eval-source-map, since column mappings (for inline breakpoints) are
   // broken in Chrome 62 anyway - even for the most basic standalone tsc-only or webpack-only examples.
-  devtool: 'cheap-module-eval-source-map'
+  devtool: 'cheap-module-eval-source-map',
+
+  output: {
+    filename: '[name].js'
+  }
 });

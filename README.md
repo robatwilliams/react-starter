@@ -15,6 +15,8 @@ Build:
 * Webpack
 * Minification
 * Tree-shaking
+* App/vendor code split
+* Long-term caching
 * Bundle analysis
 * Source maps (TypeScript, styles)
 
