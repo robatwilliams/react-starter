@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const rootPath = path.resolve(__dirname, '../');
 
-module.exports = {
+module.exports = (env, argv, options) => ({
   // Make the configuration independent of current working directory
   context: rootPath,
 
@@ -71,4 +71,4 @@ module.exports = {
       'node_modules'
     ]
   }
-};
+});

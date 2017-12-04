@@ -1,6 +1,6 @@
-const common = require('./webpack.common.js');
+const fCommon = require('./webpack.common.js');
 
-module.exports = Object.assign({}, common, {
+const fConfig = (env, argv, options, common) => ({
   devServer: {
     historyApiFallback: true,
     overlay: { warnings: false, errors: true },
@@ -18,3 +18,13 @@ module.exports = Object.assign({}, common, {
     filename: '[name].js'
   }
 });
+
+module.exports = (env, argv) => {
+  const options = {
+  };
+
+  const common = fCommon(env, argv, options);
+  const dev = fConfig(env, argv, options, common);
+
+  return Object.assign({}, common, dev);
+};

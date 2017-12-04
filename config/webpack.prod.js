@@ -5,11 +5,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const UglifyJSWebpackPlugin = require('uglifyjs-webpack-plugin');
 
-const common = require('./webpack.common.js');
+const fCommon = require('./webpack.common.js');
 
 const rootPath = path.resolve(__dirname, '../');
 
-module.exports = Object.assign({}, common, {
+const fConfig = (env, argv, options, common) => ({
   devtool: 'source-map',
 
   output: {
@@ -53,3 +53,14 @@ module.exports = Object.assign({}, common, {
     })
   ])
 });
+
+module.exports = (env, argv) => {
+  const options = {
+    prod: true
+  };
+
+  const common = fCommon(env, argv, options);
+  const prod = fConfig(env, argv, options, common);
+
+  return Object.assign({}, common, prod);
+};
