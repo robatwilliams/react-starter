@@ -18,14 +18,16 @@ module.exports = (env, argv, options) => ({
         use: [
           {
             loader: 'style-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: !options.prod }
           }, {
             loader: 'css-loader',
             options: {
               camelCase: 'dashesOnly',
               localIdentName: '[name]__[local]--[hash:base64:5]',
               modules: true,
-              sourceMap: true
+
+              // CSS source maps go in the bundle rather than separate file, so can't be for prod
+              sourceMap: !options.prod
             }
           }
         ]
