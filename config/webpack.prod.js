@@ -23,6 +23,11 @@ module.exports = Object.assign({}, common, {
   },
 
   plugins: common.plugins.concat([
+    // Add a notice at the top of each entry point file
+    new webpack.BannerPlugin({
+      banner: 'Built with react-starter. Coypright etc.\n@preserve'
+    }),
+
     // Cleans before building. Avoid removing the folder so it doesn't briefly disappear from editor view
     new CleanWebpackPlugin(['dist/**/*'], { root: rootPath }),
 
@@ -40,8 +45,7 @@ module.exports = Object.assign({}, common, {
         sourceMap: true,
         uglifyOptions: {
           output: {
-            comments: 'some', // preserve licences etc.
-            preamble: '/* Built with react-starter. Coypright etc. */'
+            comments: 'some' // preserve licences etc.
           },
           warnings: true
         },
