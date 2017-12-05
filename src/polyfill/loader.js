@@ -1,5 +1,5 @@
 function loader(polyfillsScript) {
-  var browserSupportsAll = window.Promise;
+  var browserSupportsAll = window.fetch && window.Promise;
 
   if (!browserSupportsAll) {
     appendScript(polyfillsScript);

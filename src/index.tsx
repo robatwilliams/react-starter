@@ -18,3 +18,7 @@ ReactDOM.render(
 , root);
 
 Promise.resolve().then(value => console.log('Promises work!'));
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(todo => console.log('Fetch works! Fetched: ' + todo.title));
