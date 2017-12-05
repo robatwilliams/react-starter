@@ -5,10 +5,12 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+    <% if (!htmlWebpackPlugin.options.arbitrary.devServer) { %>
     <script src="<%= webpack.assetsByChunkName["runtime-manifest"][0] %>"></script>
 
     <script>
       (<%= htmlWebpackPlugin.options.arbitrary.polyfillLoader %>)('<%= webpack.assetsByChunkName.polyfills[0] %>');
     </script>
+    <% } %>
   </body>
 </html>

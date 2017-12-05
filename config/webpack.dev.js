@@ -21,6 +21,7 @@ const fConfig = (env, argv, options, common) => ({
 
 module.exports = (env, argv) => {
   const options = {
+    devServer: argv.$0.includes('webpack-dev-server'),
   };
 
   const common = fCommon(env, argv, options);

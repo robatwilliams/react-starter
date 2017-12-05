@@ -67,13 +67,15 @@ module.exports = (env, argv, options) => ({
 
     // Creates index.html
     new HtmlWebpackPlugin({
+      // Conditional polyfill loading approach is not compatible with webpack dev server
       arbitrary: {
+        devServer: options.devServer,
         polyfillLoader: fs.readFileSync(path.resolve(rootPath, './src/polyfill/loader.js'), 'utf8')
       },
 
       // runtime-manifest: must go first, so injected by script tag in template
       // polyfills: optionally injected by the conditional polyfill loader
-      excludeChunks: ['polyfills', 'runtime-manifest'],
+      excludeChunks: options.devServer ? [] : ['polyfills', 'runtime-manifest'],
 
       favicon: './src/favicon.ico',
       template: './src/index.html',

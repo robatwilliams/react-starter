@@ -1,5 +1,6 @@
 function belongsToPolyfill(module, polyfillEntry) {
-  const belongs = getEntry(module).rawRequest === polyfillEntry;
+  // When in Webpack dev server, our entry points will have a parent. So check the chain.
+  const belongs = getIssuerChain(module).includes(polyfillEntry);
 
   if (module.context.includes('core-js') && !belongs) {
     throw new Error('Unexpected core-js not belonging to the polyfill entry');
@@ -10,6 +11,14 @@ function belongsToPolyfill(module, polyfillEntry) {
 
 function getEntry(module) {
   return module.depth === 0 ? module : getEntry(module.issuer);
+}
+
+function getIssuerChain(module) {
+  if (module.depth === 0) {
+    return [];
+  }
+
+  return getIssuerChain(module.issuer).concat(module.issuer.rawRequest);
 }
 
 module.exports = {
