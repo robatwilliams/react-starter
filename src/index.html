@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <script src="<%= webpack.assetsByChunkName["runtime-manifest"][0] %>"></script>
+
+    <script>
+      (<%= htmlWebpackPlugin.options.arbitrary.polyfillLoader %>)('<%= webpack.assetsByChunkName.polyfills[0] %>');
+    </script>
+  </body>
+</html>

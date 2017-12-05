@@ -16,3 +16,5 @@ ReactDOM.render(
     <App />
   </Router>
 , root);
+
+Promise.resolve().then(value => console.log('Promises work!'));

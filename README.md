@@ -16,6 +16,7 @@ Build:
 * Minification
 * Tree-shaking
 * Compression (gzip)
+* Polyfills - loaded only when needed (all or none)
 * ⚠ ES6 build for modern browsers
   * Not on `master` branch, due to an unresolved
     [issue](https://github.com/philipwalton/webpack-esnext-boilerplate/issues/1)

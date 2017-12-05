@@ -8,6 +8,12 @@
 
     "jsx": "react",
 
+    "lib": [
+      "dom",
+      "es5",
+      "es2015.promise"  // polyfilled if needed
+    ],
+
     // Let Webpack consume ES6 modules and transpile imports/exports, so dead code elimination works
     "module": "es6",
 

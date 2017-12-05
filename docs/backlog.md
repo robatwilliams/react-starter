@@ -9,13 +9,6 @@ Framework & ecosystem:
   * Unhandled action detector
 
 Code:
-* Polyfills - when needed, not targeted
-  <details>
-    https://webpack.js.org/guides/shimming/#loading-polyfills
-    https://webpack.js.org/guides/shimming/#further-optimizations
-    https://philipwalton.com/articles/loading-polyfills-only-when-needed/
-    https://hackernoon.com/10-things-i-learned-making-the-fastest-site-in-the-world-18a0e1cdf4a7#c665
-  </details>
 * TSLint
 
 Styling:
