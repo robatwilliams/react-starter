@@ -1,10 +1,11 @@
-const fs = require('fs');
 const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const chunkSorter = require('html-webpack-plugin/lib/chunksorter');
 
 const util = require('./webpack-util');
+chunkSorter.dependencyAccommodatingPolyfillsLoader = util.sortChunksByDependencyAccommodatingPolyfillsLoader;
 
 const rootPath = path.resolve(__dirname, '../');
 
@@ -16,7 +17,8 @@ module.exports = (env, argv, options) => ({
 
   entry: {
     main: './src/index.tsx',
-    polyfills: polyfillsEntry
+    polyfills: polyfillsEntry,
+    'polyfills-loader': './src/polyfill/loader.js'
   },
 
   module: {
@@ -68,15 +70,8 @@ module.exports = (env, argv, options) => ({
     // Creates index.html
     new HtmlWebpackPlugin({
       // Conditional polyfill loading approach is not compatible with webpack dev server
-      arbitrary: {
-        devServer: options.devServer,
-        polyfillLoader: fs.readFileSync(path.resolve(rootPath, './src/polyfill/loader.js'), 'utf8')
-      },
-
-      // runtime-manifest: must go first, so injected by script tag in template
-      // polyfills: optionally injected by the conditional polyfill loader
-      excludeChunks: options.devServer ? [] : ['polyfills', 'runtime-manifest'],
-
+      chunksSortMode: options.devServer ? 'dependency' : 'dependencyAccommodatingPolyfillsLoader',
+      excludeChunks: options.devServer ? ['polyfills-loader'] : [],
       favicon: './src/favicon.ico',
       template: './src/index.html',
       title: 'React Starter'

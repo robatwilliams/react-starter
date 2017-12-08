@@ -13,3 +13,5 @@ function loader(polyfillsScript) {
     document.body.appendChild(script);
   }
 }
+
+loader(window.reactStarterPolyfills);
