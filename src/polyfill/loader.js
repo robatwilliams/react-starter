@@ -1,4 +1,7 @@
 // ES5 only in this file
+
+var supportsModule = document.createElement('script').noModule === false;
+
 function loader(polyfillsScript) {
   var browserSupportsAll = window.fetch && window.Promise;
 
@@ -19,8 +22,13 @@ function appendScript(src) {
   // the inserted script will go before those in the run-order queue.
   script.defer = true;
 
+  if (supportsModule) {
+    script.type = 'module';
+  }
+
   // append after the currently-executing script tag
   document.body.appendChild(script);
 }
 
-loader(window.assetReferences.polyfills);
+var polyfillsScript = assetReferences[supportsModule ? 'polyfills_modern' : 'polyfills_legacy'];
+loader(polyfillsScript);

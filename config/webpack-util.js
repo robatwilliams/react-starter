@@ -30,7 +30,7 @@ function sortChunksByDependencyAccommodatingPolyfillsLoader(chunks) {
   const sorted = chunkSorter.dependency(chunks);
 
   const polyfillsLoaderIndex = sorted.findIndex(chunk => chunk.names.includes('polyfills-loader'));
-  const runtimeManifestIndex = sorted.findIndex(chunk => chunk.names.includes('runtime-manifest'));
+  const runtimeManifestIndex = sorted.findIndex(chunk => /^runtime-manifest_/.test(chunk.names[0]));
 
   const [polyfillsLoader] = sorted.splice(polyfillsLoaderIndex, 1);
   sorted.splice(runtimeManifestIndex + 1, 0, polyfillsLoader);

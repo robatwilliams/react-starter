@@ -9,8 +9,11 @@
     "jsx": "react",
 
     "lib": [
+      // es6 target defaults
       "dom",
-      "es5",
+      "dom.iterable",
+      "es6",
+
       "es2015.promise"  // polyfilled if needed
     ],
 
@@ -29,7 +32,10 @@
     // noImplicit{Any,This}, strict{FunctionTypes,NullChecks}, and any future strict compiler features
     "strict": true,
 
-    "target": "es5"
+    "target": "es6",
+
+    // Workaround for awesome-typescript-loader when using configFileName option (issue: 386)
+    "typeRoots": ["./node_modules/@types"]
   },
   "files": [
     // Just the entry point, as recommended by awesome-typescript-loader

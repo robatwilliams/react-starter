@@ -11,13 +11,15 @@ const rootPath = path.resolve(__dirname, '../');
 
 const polyfillsEntry = './src/polyfill/polyfills.ts';
 
-module.exports = (env, argv, options) => ({
+const fConfig = (env, argv, options) => ({
   // Make the configuration independent of current working directory
   context: rootPath,
 
   entry: {
-    main: './src/index.tsx',
-    polyfills: polyfillsEntry,
+    [`main${options.entrySuffix}`]: './src/index.tsx',
+    [`polyfills${options.entrySuffix}`]: polyfillsEntry,
+
+    // Same for legacy & modern builds, to simplify the build
     'polyfills-loader': './src/polyfill/loader.js'
   },
 
@@ -46,6 +48,8 @@ module.exports = (env, argv, options) => ({
         test: /\.tsx?$/,
         loader: 'awesome-typescript-loader',
         options: {
+          configFileName: `tsconfig${options.es5 ? '-es5' : ''}.json`,
+
           // Don't pollute Webpack stats JSON output
           silent: process.argv.indexOf('--json') !== -1
         }
@@ -56,14 +60,14 @@ module.exports = (env, argv, options) => ({
   plugins: [
     // Vendor chunk for libraries, separate from application code
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
+      name: `vendor${options.entrySuffix}`,
       minChunks: (module, count) =>
         module.context.includes('node_modules') && !util.belongsToPolyfill(module, polyfillsEntry)
     }),
 
     // Webpack runtime & manifest chunk (needs to be the last CommonsChunk)
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'runtime-manifest',
+      name: `runtime-manifest${options.entrySuffix}`,
       minChunks: Infinity // ensures no modules go in the chunk
     }),
 
@@ -89,3 +93,11 @@ module.exports = (env, argv, options) => ({
     ]
   }
 });
+
+module.exports = (env, argv, optionsArg) => {
+  const options = Object.assign({
+    entrySuffix: ''
+  }, optionsArg);
+
+  return fConfig(env, argv, options);
+};

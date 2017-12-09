@@ -5,7 +5,7 @@
   "scripts": {
     "preanalyze-bundle": "npm run build --silent -- --profile --json > bundle-stats.json",
     "analyze-bundle": "webpack-bundle-analyzer bundle-stats.json dist",
-    "build": "webpack --config config/webpack.prod.js",
+    "build": "webpack --config config/webpack.prod.multi.js",
     "serve": "http-server dist --gzip",
     "serveo": "npm run serve -- -o",
     "start": "webpack-dev-server --config config/webpack.dev.js",
@@ -22,6 +22,7 @@
     "css-loader": "^0.28.7",
     "html-webpack-plugin": "^2.30.1",
     "http-server": "^0.10.0",
+    "lodash": "^4.17.4",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-router-dom": "^4.2.2",
