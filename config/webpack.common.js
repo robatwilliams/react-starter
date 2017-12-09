@@ -73,6 +73,7 @@ module.exports = (env, argv, options) => ({
       chunksSortMode: options.devServer ? 'dependency' : 'dependencyAccommodatingPolyfillsLoader',
       excludeChunks: options.devServer ? ['polyfills-loader'] : [],
       favicon: './src/favicon.ico',
+      template: './src/index.html',
       title: 'React Starter'
     })
   ],
