@@ -23,6 +23,9 @@ Testing:
 * Assertions (Jest)
 * Coverage - with source map (Istanbul built in to Jest)
 * End to end testing - in multiple browsers (e.g. Nightwatch)
+  <details>
+    Use test-id attributes: http://blog.scottlogic.com/2016/03/11/independent-testers-question.html
+  </details>
 * Framework (Jest)
 * Mocking (Jest)
 * Mutation testing (Stryker)
@@ -36,6 +39,10 @@ Build:
 Development:
 * Hot reloading
 * Micro-generator templates (Plop)
+  <details>
+    Are editor templates better for when you have just one file?
+    Plop presumably requires you to navigate to the right directory to run it.
+  </details>
 * Tool configuration:
   * Chrome workspace
 
@@ -60,14 +67,14 @@ Deployment:
     https://webpack.js.org/plugins/define-plugin/#service-urls ?
     https://webpack.js.org/plugins/environment-plugin/#dotenvplugin
   </details>
-* Security-related HTTP headers
+* Security-related HTTP headers (Express Helmet?)
 
 Operations:
 * Error tracking service integration
 * Logging to the server
 
 Other:
-* Dependency insecure/outdated watcher (David)
+* Dependency insecure/outdated watcher (David, nsp?)
 * Icons (Font Awesome SVG)
   <details>
     https://webpack.js.org/guides/typescript/#importing-other-assets
@@ -75,6 +82,11 @@ Other:
 * NPM shrinkwrap
 * NPM update check helper (npm-check)
 * Unsupported browser warning
+  <details>
+    Selenium appears to support running IE in different modes via a registry setting,
+    or injecting an X-UA header in the response - either of which would be simpler than
+    running VMs with older IEs.
+  </details>
 * Version-aware application
   <details>
     https://webpack.js.org/plugins/define-plugin/#usage (but with version number rather than hash)
@@ -100,3 +112,11 @@ Readme:
   * Should you use a starter/c-r-a? Do you know what it's doing & assumptions?
   * Updating your application
   * Why yet another starter (learn & explore)
+  * Smoke tests
+    <details>
+      Bundle analysis is reasonable,
+      works for prod & dev-,
+      browsers that need/don't need polyfills
+      browsers that do/don't support ES6 modules
+      unsupported browsers
+    </details>
