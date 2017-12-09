@@ -47,6 +47,10 @@ const fConfig = (env, argv, options, common) => ({
         attribute: 'type',
         value: 'text/plain'
       },
+
+      // Don't block squbsequents' loading. Except manifest - needs to be run before polyfills loader.
+      defer: /^(?!runtime-manifest).*$/,
+
       inline: 'polyfills-loader'
     }),
 
