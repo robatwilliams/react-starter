@@ -40,15 +40,16 @@ const fConfig = (env, argv, options, common) => ({
       'process.env.NODE_ENV': '"production"'
     }),
 
-    // Inlines the polyfills loader & prevents the default polyfills tag from loading
+    // Inlines the polyfills loader & adds attributes to others to modify behaviour
     new ScriptExtHtmlWebpackPlugin({
+      // Prevents polyfills tags from loading by default
       custom: {
         test: 'polyfills.',
         attribute: 'type',
         value: 'text/plain'
       },
 
-      // Don't block squbsequents' loading. Except manifest - needs to be run before polyfills loader.
+      // Don't block subsequents' loading. Except manifest - needs to be run before polyfills loader.
       defer: /^(?!runtime-manifest).*$/,
 
       inline: 'polyfills-loader'
