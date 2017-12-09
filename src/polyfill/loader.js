@@ -23,4 +23,4 @@ function appendScript(src) {
   document.body.appendChild(script);
 }
 
-loader(window.reactStarterPolyfills);
+loader(window.assetReferences.polyfills);
