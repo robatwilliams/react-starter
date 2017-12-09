@@ -39,6 +39,13 @@ const fConfig = (env, argv, options, common) => ({
       'process.env.NODE_ENV': '"production"'
     }),
 
+    // Keeps module ids consistent between runs.
+    // Added so that ScriptExtHtmlWebpackPlugin can find a polyfills-loader on both legacy/modern runs.
+    new webpack.HashedModuleIdsPlugin(),
+
+    // Make the HTML page load a modern build if the browser supports it, otherwise a legacy one
+    options.htmlModuleScriptPlugin,
+
     // Minification & tree shaking
     new UglifyJSWebpackPlugin({
       parallel: true,
@@ -54,10 +61,10 @@ const fConfig = (env, argv, options, common) => ({
   ])
 });
 
-module.exports = (env, argv) => {
-  const options = {
+module.exports = (env, argv, optionsArg) => {
+  const options = Object.assign({}, optionsArg, {
     prod: true
-  };
+  });
 
   const common = fCommon(env, argv, options);
   const prod = fConfig(env, argv, options, common);

@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    // Disabled to avoid errors on node_modules/@types due to drive letter casing
+    "forceConsistentCasingInFileNames": false,
+
+    "lib": [
+      // es5 target defaults
+      "dom",
+      "es5",
+
+      "es2015.promise"  // polyfilled
+    ],
+
+    "target": "es5"
+  }
+}
