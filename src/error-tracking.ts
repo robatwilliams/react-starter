@@ -1,7 +1,7 @@
 import Raven from 'raven-js';
 
-const projectId = 258387;
-const publicKey = '99f0cc59f9164101a3fe2767c0100d16';
+const projectId = process.env.SENTRY_PROJECT_ID;
+const publicKey = process.env.SENTRY_PUBLIC_KEY;
 
 const options: Raven.RavenOptions = {
   // debug: true,

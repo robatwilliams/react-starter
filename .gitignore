@@ -1,5 +1,6 @@
 /dist
 /node_modules
 
+/config/.env
 bundle-stats.json
 npm-debug.log*

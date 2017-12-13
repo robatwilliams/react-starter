@@ -21,6 +21,7 @@
     "compression-webpack-plugin": "^1.0.1",
     "core-js": "^2.5.1",
     "css-loader": "^0.28.7",
+    "dotenv-webpack": "^1.5.4",
     "html-webpack-plugin": "^2.30.1",
     "http-server": "^0.10.0",
     "raven-js": "^3.20.1",

@@ -1,5 +1,6 @@
 const path = require('path');
 
+const DotenvWebpack = require('dotenv-webpack');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const chunkSorter = require('html-webpack-plugin/lib/chunksorter');
@@ -65,6 +66,12 @@ module.exports = (env, argv, options) => ({
     new webpack.optimize.CommonsChunkPlugin({
       name: 'runtime-manifest',
       minChunks: Infinity // ensures no modules go in the chunk
+    }),
+
+    // Expose configuration variables to be built into the bundle
+    new DotenvWebpack({
+      path: './config/.env',
+      safe: './config/.env.example.env'
     }),
 
     // Creates index.html
