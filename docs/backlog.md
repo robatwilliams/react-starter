@@ -70,7 +70,6 @@ Deployment:
 * Security-related HTTP headers (Express Helmet?)
 
 Operations:
-* Error tracking service integration
 * Logging to the server
 
 Other:

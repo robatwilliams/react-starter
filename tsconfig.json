@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    // Allow default imports from modules with no default export. Added for raven-js
+    "allowSyntheticDefaultImports": true,
+
     "forceConsistentCasingInFileNames": true,
 
     // Use tslib for runtime helpers (e.g. __extends), rather than repeating them in each module
@@ -34,5 +37,8 @@
   "files": [
     // Just the entry point, as recommended by awesome-typescript-loader
     "./src/index.tsx"
+  ],
+  "include": [
+    "./src/typings/**/*.d.ts"
   ]
 }

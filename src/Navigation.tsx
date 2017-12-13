@@ -10,6 +10,7 @@ export default function Navigation() {
       <ul>
         <li><NavLink to="/" exact>Home</NavLink></li>
         <li><NavLink to="/alpha">Alpha</NavLink></li>
+        <li><NavLink to="/example-errorTracking">Example: error tracking</NavLink></li>
       </ul>
     </nav>
   );

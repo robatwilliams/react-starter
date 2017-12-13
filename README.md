@@ -32,6 +32,9 @@ Development:
 * Tool configuration
   * Visual Studio Code (settings)
 
+Operations:
+* Error tracking service integration (Sentry)
+
 ## Non-features
 * Analytics
 * Build process optimisation for large codebases

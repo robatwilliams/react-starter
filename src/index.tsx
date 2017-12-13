@@ -3,9 +3,12 @@ import * as ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './App';
+import { initErrorTracking } from './error-tracking';
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('Running from development build');
+} else {
+  initErrorTracking();
 }
 
 const root = document.createElement('div');

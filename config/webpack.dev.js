@@ -12,6 +12,7 @@ const fConfig = (env, argv, options, common) => ({
 
   // Cheaper alternative to eval-source-map, since column mappings (for inline breakpoints) are
   // broken in Chrome 62 anyway - even for the most basic standalone tsc-only or webpack-only examples.
+  // Any of the "eval" options will cause thrown errors to have a different origin.
   devtool: 'cheap-module-eval-source-map',
 
   output: {
