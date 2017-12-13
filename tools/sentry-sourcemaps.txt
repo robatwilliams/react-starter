@@ -1,0 +1,13 @@
+https://docs.sentry.io/learn/cli/releases/
+sentry-cli releases -h
+
+sentry-cli releases list
+sentry-cli releases new VERSION
+
+npm run build
+
+sentry-cli releases files VERSION upload-sourcemaps --validate ./dist/
+sentry-cli releases files VERSION list
+
+Source maps are not applied retroactively to past errors.
+VERSION needs to match what Raven is configured with at runtime.

@@ -1,5 +1,3 @@
-// TODO https://docs.sentry.io/clients/javascript/sourcemaps/#raven-js-sourcemaps
-// Source map validator: https://sourcemaps.io/
 import Raven from 'raven-js';
 
 const projectId = 258387;
@@ -8,6 +6,8 @@ const publicKey = '99f0cc59f9164101a3fe2767c0100d16';
 const options: Raven.RavenOptions = {
   // debug: true,
   environment: 'local', // TODO populate based on runtime environment
+
+  // Needs to match a release with uploaded sourcemaps
   release: '0.1.0'   // TODO populate based on version number or Git tag
 };
 
