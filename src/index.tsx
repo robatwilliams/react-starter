@@ -1,3 +1,6 @@
+// Must go first, in order to be available to other modules that may need them while initialising.
+import './polyfills';
+
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';

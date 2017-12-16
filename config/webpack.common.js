@@ -3,25 +3,15 @@ const path = require('path');
 const DotenvWebpack = require('dotenv-webpack');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const chunkSorter = require('html-webpack-plugin/lib/chunksorter');
-const InlineChunkManifestHtmlWebpackPlugin = require('inline-chunk-manifest-html-webpack-plugin');
-const ManifestWebpackPlugin = require('webpack-manifest-plugin');
-
-const util = require('./webpack-util');
-chunkSorter.dependencyAccommodatingPolyfillsLoader = util.sortChunksByDependencyAccommodatingPolyfillsLoader;
 
 const rootPath = path.resolve(__dirname, '../');
-
-const polyfillsEntry = './src/polyfill/polyfills.ts';
 
 module.exports = (env, argv, options) => ({
   // Make the configuration independent of current working directory
   context: rootPath,
 
   entry: {
-    main: './src/index.tsx',
-    polyfills: polyfillsEntry,
-    'polyfills-loader': './src/polyfill/loader.js'
+    main: './src/index.tsx'
   },
 
   module: {
@@ -60,8 +50,7 @@ module.exports = (env, argv, options) => ({
     // Vendor chunk for libraries, separate from application code
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: (module, count) =>
-        module.context.includes('node_modules') && !util.belongsToPolyfill(module, polyfillsEntry)
+      minChunks: (module, count) => module.context.includes('node_modules')
     }),
 
     // Webpack runtime & manifest chunk (needs to be the last CommonsChunk)
@@ -76,22 +65,8 @@ module.exports = (env, argv, options) => ({
       safe: './config/.env.example.env'
     }),
 
-    // Injects an entrypoint -> filename mapping into the document head, for use by polyfills loader.
-    // Needs to come before HtmlWebpackPlugin.
-    new InlineChunkManifestHtmlWebpackPlugin({
-      manifestPlugins: [
-        // Create a source file -> output file mapping, instead of a chunk id mapping
-        new ManifestWebpackPlugin({
-          filter: file => file.name === 'polyfills.js'
-        })
-      ]
-    }),
-
     // Creates index.html
     new HtmlWebpackPlugin({
-      // Conditional polyfill loading approach is not compatible with webpack dev server
-      chunksSortMode: options.devServer ? 'dependency' : 'dependencyAccommodatingPolyfillsLoader',
-      excludeChunks: options.devServer ? ['polyfills-loader'] : ['polyfills'],
       favicon: './src/favicon.ico',
       template: './src/index.html',
       title: 'React Starter'

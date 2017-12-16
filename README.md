@@ -16,7 +16,7 @@ Build:
 * Minification
 * Tree-shaking
 * Compression (gzip)
-* Polyfills - loaded only when needed (all or none)
+* Polyfills
 * ⚠ ES6 build for modern browsers
   * Not on `master` branch, due to a loading-order problem and a separate unresolved
     [issue](https://github.com/philipwalton/webpack-esnext-boilerplate/issues/1)
@@ -39,6 +39,7 @@ Operations:
 * Analytics
 * Build process optimisation for large codebases
 * Comprehensive TSLint rule configuration
+* Conditional polyfill loading
 * CSS in JS
 * Font loading
 * Image loading & optimisation

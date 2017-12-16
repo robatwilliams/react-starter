@@ -3,7 +3,6 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const UglifyJSWebpackPlugin = require('uglifyjs-webpack-plugin');
 
 const fCommon = require('./webpack.common.js');
@@ -38,11 +37,6 @@ const fConfig = (env, argv, options, common) => ({
     // Put libraries (e.g. React) into production mode
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
-    }),
-
-    // Inlines the polyfills loader
-    new ScriptExtHtmlWebpackPlugin({
-      inline: 'polyfills-loader'
     }),
 
     // Minification & tree shaking
