@@ -36,21 +36,27 @@ Operations:
 * Error tracking service integration (Sentry)
 
 ## Non-features
-* Analytics
-* Build process optimisation for large codebases
-* Comprehensive TSLint rule configuration
-* Conditional polyfill loading
-* CSS in JS
-* Font loading
-* Image loading & optimisation
-* Localisation
-* Offline support
-* Running unit tests in browsers (rather than Node)
-* Server-side rendering
-* Stylesheet analysis (Parker)
-* Task runner
-* Visual regression testing (e.g. BackstopJS)
-* Web App Manifest
+Some features that might be desired in a project setup, and/or expected in a starter project,
+are not included. They are listed here for clarity and also as a list of things you may
+wish to consider. The reasons are driven by what I find interesting and useful to learn about.
+
+Feature | Reason
+--------|--------
+Analytics | Use-case specific
+Build process optimisation for large codebases | Specific to individual app size & structure
+Comprehensive TSLint rule configuration | Project in its own right, personal/team preference
+Conditional polyfill loading | Complexity not justified for most apps
+CSS in JS | Not convinced it's a good idea
+Font loading | Trivial, not commonly needed
+Image loading & optimisation | Not needed for apps I typically work on
+Localisation | Use-case specific
+Offline support | Not needed for apps I typically work on
+Running unit tests in browsers (rather than Node) | Jest works this way, it's sufficient
+Server-side rendering | Not needed for apps I typically work on
+Stylesheet analysis ([Parker](https://github.com/katiefenn/parker/)) | Only supports plain CSS
+Task runner | Webpack is sufficient so far
+Visual regression testing (e.g. [BackstopJS](https://github.com/garris/BackstopJS)) | Out of scope
+Web App Manifest | Not a mobile app starter
 
 ## Principles
 1. Simplicity
