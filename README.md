@@ -33,7 +33,7 @@ Build:
 * App/vendor code split
 * Long-term caching
 * Bundle analysis
-* Source maps (TypeScript, styles)
+* Source maps (TypeScript, libraries, styles)
 
 Development:
 * Webpack Dev Server

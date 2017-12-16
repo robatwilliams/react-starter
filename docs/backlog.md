@@ -61,7 +61,6 @@ Deployment:
     It could then prompt for reload.
     A changelog file could also be deployed, fetched, and its contents shown in the prompt.
   </details>
-* Library source maps (off by default?)
 * Per-environemnt configuration
   <details>
     https://webpack.js.org/plugins/define-plugin/#service-urls ?
