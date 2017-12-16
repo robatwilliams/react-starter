@@ -103,19 +103,3 @@ Readme:
 * Licence
 * Readme
   * Badges (build status, GitHub downloads, David dependencies)
-  * Browser support (incl. IE11)
-  * Getting started (without the history)
-  * Headline tech & features
-  * No releases. Commit history is the changelog
-  * Short summary
-  * Should you use a starter/c-r-a? Do you know what it's doing & assumptions?
-  * Updating your application
-  * Why yet another starter (learn & explore)
-  * Smoke tests
-    <details>
-      Bundle analysis is reasonable,
-      works for prod & dev-,
-      browsers that need/don't need polyfills
-      browsers that do/don't support ES6 modules
-      unsupported browsers
-    </details>

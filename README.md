@@ -1,4 +1,12 @@
 # React Starter
+Starter project, whose main purpose is to serve as a place for me to try out new & interesting tech.
+
+Based around React, but covers a wide range of related & unrelated frontend tech.
+
+I haven't used this to start a real project, and wouldn't recommend that you do either. You might
+however find parts of it useful as a reference. Do create an issue with any feedback/bugs. There
+are many ways of starting a new frontend project, and none of them in my opinion are a substitute
+to knowing your tools and understanding how your project works under the hood.
 
 ## Features
 Framework & ecosystem:
@@ -35,6 +43,9 @@ Development:
 Operations:
 * Error tracking service integration (Sentry)
 
+Other:
+* Browser support: common modern desktop browsers, IE11 and later
+
 ## Non-features
 Some features that might be desired in a project setup, and/or expected in a starter project,
 are not included. They are listed here for clarity and also as a list of things you may
@@ -68,6 +79,14 @@ help the project remain understandable, maintainable, and stable.
 1. No obscure dependencies
 1. No unstable features/dependencies/tools
 
+## Getting started
+There are no releases, and the commit history is the changelog.
+
+Forking the project as a starting point would give you a lot of probably-unwanted history,
+so consider making a new repository and committing the latest version as a single commit. Note which version you started with, by including the commit hash and date of the current version
+in the commit message. This will allow you to review future additions and fixes that you may want
+to pull into your project.
+
 ## Tooling
 ### Webpack bundle analysis
 `webpack-bundle-analyzer` is included; see the `analyze-bundle` NPM script.
@@ -76,3 +95,9 @@ that can consume the `bundle-stats.json` file that Webpack generates:
 [official analyse tool](https://webpack.github.io/analyse),
 [webpack-chart](https://alexkuz.github.io/webpack-chart),
 [webpack-visualizer](https://chrisbateman.github.io/webpack-visualizer).
+
+## Smoke checks
+A few things to check after making big additions/changes, in addition to what is automated.
+
+* Both dev & prod builds work in Chrome & IE11
+* Webpack bundle analysis looks ok
