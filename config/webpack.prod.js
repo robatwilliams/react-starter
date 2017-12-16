@@ -3,7 +3,6 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
-const HtmlAssetReferenceWebpackPlugin = require('./HtmlAssetReferenceWebpackPlugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const UglifyJSWebpackPlugin = require('uglifyjs-webpack-plugin');
 
@@ -40,9 +39,6 @@ const fConfig = (env, argv, options, common) => ({
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
-
-    // Replaces scripts with variables containing their src, so they can be conditionally loaded
-    new HtmlAssetReferenceWebpackPlugin(['polyfills.']),
 
     // Inlines the polyfills loader
     new ScriptExtHtmlWebpackPlugin({

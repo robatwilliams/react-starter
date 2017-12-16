@@ -18,4 +18,4 @@ function appendScript(src) {
   document.body.appendChild(script);
 }
 
-loader(window.assetReferences.polyfills);
+loader(window.webpackManifest['polyfills.js']);
