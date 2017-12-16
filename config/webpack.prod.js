@@ -41,15 +41,15 @@ const fConfig = (env, argv, options, common) => ({
 
     // Minification & tree shaking
     new UglifyJSWebpackPlugin({
-        parallel: true,
-        sourceMap: true,
-        uglifyOptions: {
-          output: {
-            comments: 'some' // preserve licences etc.
-          },
-          warnings: true
+      parallel: true,
+      sourceMap: true,
+      uglifyOptions: {
+        output: {
+          comments: 'some' // preserve licences etc.
         },
-        warningsFilter: sourceAbsolutePath => !sourceAbsolutePath.includes('node_modules')
+        warnings: true
+      },
+      warningsFilter: sourceAbsolutePath => !sourceAbsolutePath.includes('node_modules')
     })
   ])
 });
