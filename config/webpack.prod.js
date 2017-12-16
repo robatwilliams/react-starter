@@ -44,11 +44,8 @@ const fConfig = (env, argv, options, common) => ({
     // Replaces scripts with variables containing their src, so they can be conditionally loaded
     new HtmlAssetReferenceWebpackPlugin(['polyfills.']),
 
-    // Inlines the polyfills loader & adds attributes to others to modify behaviour
+    // Inlines the polyfills loader
     new ScriptExtHtmlWebpackPlugin({
-      // Don't block subsequents' loading. Except manifest - needs to be run before polyfills loader.
-      defer: /^(?!runtime-manifest).*$/,
-
       inline: 'polyfills-loader'
     }),
 
