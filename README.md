@@ -59,11 +59,14 @@ Visual regression testing (e.g. [BackstopJS](https://github.com/garris/BackstopJ
 Web App Manifest | Not a mobile app starter
 
 ## Principles
+Both the feature set and implementation are driven by these high-level principles. These should
+help the project remain understandable, maintainable, and stable.
+
 1. Simplicity
 1. No hidden magic
 1. Explain the "why" when it isn't clear
 1. No obscure dependencies
-1. No unstable features/tools
+1. No unstable features/dependencies/tools
 
 ## Tooling
 ### Webpack bundle analysis
