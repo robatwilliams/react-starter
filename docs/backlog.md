@@ -52,7 +52,6 @@ Source control:
 * Link to recommended Git configuration
 
 Deployment:
-* Apache configuration (caching, compression, history API)
 * Detect new deployment & prompt for reload
   <details>
     Include build number in index.html (meta tag or global var).

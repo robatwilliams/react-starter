@@ -40,6 +40,10 @@ Development:
 * Tool configuration
   * Visual Studio Code (settings)
 
+Deployment:
+* Server configuration (for Apache)
+  * Including: fallback for client-side routes, caching, precompressed files, restricted source map files
+
 Operations:
 * Error tracking service integration (Sentry)
 
