@@ -42,7 +42,11 @@ Development:
 
 Deployment:
 * Server configuration (for Apache)
-  * Including: fallback for client-side routes, caching, precompressed files, restricted source map files
+  * caching
+  * fallback for client-side routes
+  * restricted source map files
+  * security-related HTTP headers
+  * use precompressed files
 
 Operations:
 * Error tracking service integration (Sentry)

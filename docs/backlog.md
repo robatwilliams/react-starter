@@ -65,7 +65,6 @@ Deployment:
     https://webpack.js.org/plugins/define-plugin/#service-urls ?
     https://webpack.js.org/plugins/environment-plugin/#dotenvplugin
   </details>
-* Security-related HTTP headers (Express Helmet?)
 
 Operations:
 * Logging to the server
