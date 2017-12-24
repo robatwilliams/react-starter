@@ -1,6 +1,7 @@
 /deploy
 /dist
 /node_modules
+/ssl
 
 /config/.env
 bundle-stats.json

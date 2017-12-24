@@ -47,6 +47,7 @@ Deployment:
   * restricted source map files
   * security-related HTTP headers
   * use precompressed files
+* HTTPS: certificates & server configuration
 
 Operations:
 * Error tracking service integration (Sentry)
