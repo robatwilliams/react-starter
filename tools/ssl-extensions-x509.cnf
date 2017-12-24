@@ -1,0 +1,11 @@
+# Extensions to add to a self-signed certificate.
+# x509 doesn't copy them from the request due to a bug
+#   https://www.openssl.org/docs/man1.1.0/apps/x509.html#BUGS
+#   "Extensions in certificates are not transferred to certificate requests and vice versa"
+
+[v3_ca]
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = react-starter.localhost
+DNS.2 = www.react-starter.localhost

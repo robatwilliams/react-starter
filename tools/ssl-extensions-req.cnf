@@ -1,0 +1,11 @@
+# Extensions to add to a certificate request
+
+[req]
+req_extensions = v3_req
+
+[v3_req]
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = react-starter.localhost
+DNS.2 = www.react-starter.localhost
